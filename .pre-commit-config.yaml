@@ -1,0 +1,21 @@
+repos:
+- repo: https://github.com/psf/black-pre-commit-mirror
+  rev: 24.8.0
+  hooks:
+    - id: black
+      args: [--target-version, py38, --preview, --enable-unstable-feature=string_processing]
+      language_version: python3.8
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v4.6.0
+  hooks:
+    - id: trailing-whitespace
+- repo: https://github.com/astral-sh/ruff-pre-commit
+  rev: 'v0.6.1'
+  hooks:
+    - id: ruff
+      language_version: python3.8
+
+ci:
+  autofix_commit_msg: 'ci: auto fixes from pre-commit.com hooks'
+  autoupdate_branch: 'main'
+  autoupdate_commit_msg: 'ci: pre-commit autoupdate'

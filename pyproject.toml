@@ -1,0 +1,67 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pcg64dxsm"
+authors = [{ name = "AstreaTSS" }]
+description = "A pure Python implementation of the PCG64DXSM random number generator."
+requires-python = ">=3.8"
+readme = "README.md"
+license = "MIT"
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Typing :: Typed",
+]
+dynamic = ["version"]
+
+[project.urls]
+Homepage = "https://github.com/Astrea-Stellarium-Labs/pcg64dxsm.git"
+
+[tool.hatch.version]
+path = "pcg64dxsm/__init__.py"
+
+[tool.hatch.build]
+include = ["pcg64dxsm/**/*"]
+
+[tool.ruff]
+line-length = 88
+
+select = ["E", "F", "UP", "N", "YTT", "ANN", "S", "B", "A", "C4", "T20", "RET", "SIM", "I001"]
+ignore = ["E501", "E402", "B003", "ANN101", "ANN102", "RET506", "ANN401", "B008", "N806", "A003", "N818", "UP007", "SIM118", "RET502", "RET503", "SIM114", "S603", "S607", "F405", "F403", "S107"]
+
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".hg",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "venv",
+]
+per-file-ignores = {}
+
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+target-version = "py38"
+
+fix = true
+
+[tool.ruff.mccabe]
+max-complexity = 10
